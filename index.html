@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Vueify Bootstrap</title>
-        <script src="https://unpkg.com/vue"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" href='/main.css' type='text/css'>
-    </head>
-    <body>
 
-        <div class="container-fluid" id='app'>
-            <mainhead headline="Colin's Favorite Bands"></mainhead>
-            <jumbotron header="Underoath" partext="Hardcore from Tampa, Florida." id="underoath" url='http://underoath777.com/' buttontext="Underoath Site" modalbtn="Albums Released" modalttl="Underoath" modalbody="Underoath has released 5 albums">
-            </jumbotron>
-            <jumbotron header="Thrice" partext="Rock from Orange County." id="thrice" url="http://thrice.net/news/" buttontext="Thrice Site" modalbtn="Albums Released" modalttl="Thrice" modalbody="Thrice has released 9 albums">
-            </jumbotron>
-            <jumbotron header="Mastodon" partext="Metal from Atlanta, Georgia." id="mastodon" url="http://www.mastodonrocks.com/" buttontext="Mastodon Site" modalbtn="Albums Released" modalttl="Mastodon" modalbody="Mastodon has released 7 albums">
-            </jumbotron>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <title>Vueify Bootstrap</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href='/main.css' type='text/css'>
+</head>
 
-<!-- SCRIPT TAGS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <script src='/main.js'></script>
-<!-- END OF SCRIPT TAGS -->
-    </body>
+<body>
+
+    <div class="container-fluid" id='app'>
+        <mainhead headline="Colin's Favorite Bands"></mainhead>
+        <jumbotron v-for="band in bands"
+        v-bind:header='band.name'
+        v-bind:partext='band.location'
+        v-bind:id='band.id'
+        v-bind:url='band.url'
+        v-bind:buttontext='band.buttontxt'
+        v-bind:modaltarget='band.modaltarget'
+        modalbtn="Albums Released"
+        v-bind:modalid='band.modalid'
+        v-bind:modalttl='band.name'
+        v-bind:modalbody='band.albums'>
+        </jumbotron>
+    </div>
+
+    <!-- SCRIPT TAGS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src='/main.js'></script>
+    <!-- END OF SCRIPT TAGS -->
+</body>
+
 </html>

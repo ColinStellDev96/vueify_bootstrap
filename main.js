@@ -11,18 +11,20 @@ Vue.component('jumbotron', {
             <div class="container">
             <h1 class="display-3">{{header}}</h1>
             <p class="lead">{{partext}}</p>
+            <!-- Link Butron -->
             <a v-bind:href='url' target="_blank">
                 <button class="btn btn-secondary">{{buttontext}}</button>
             </a><br>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <!-- Modal Button -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" v-bind:data-target="modaltarget">
               {{modalbtn}}
             </button>
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" v-bind:id="modalid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{modalttl}}</h5>
+                    <h5 class="modal-title" v-bind:id="modalid">{{modalttl}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -35,9 +37,21 @@ Vue.component('jumbotron', {
                   </div>
                 </div>
               </div>
-        </div>
+          </div>
+      </div>
+    </div>
     `,
-    props: ['header', 'partext', 'url', 'buttontext','modalbtn', 'modalttl', 'modalbody']
+    props: [
+        'header',
+        'partext',
+        'url',
+        'buttontext',
+        'modalbtn',
+        'modalttl',
+        'modalbody',
+        'modaltarget',
+        'modalid'
+    ]
 });
 
 var mainVm = new Vue({
@@ -46,13 +60,31 @@ var mainVm = new Vue({
         bands: [
             {
                 name: 'Underoath',
-                albums: 5
+                location: 'Hardcore From Tampa, Florida',
+                id: 'underoath',
+                url: 'http://underoath777.com/',
+                buttontxt: 'Underoath Site',
+                modaltarget: '#underoathtarget',
+                modalid: 'underoathtarget',
+                albums: 'Underoath has released 5 albums'
             }, {
                 name: 'Thrice',
-                albums: 9
+                location: 'Rock from Orange County, California',
+                id: 'thrice',
+                url: 'http://thrice.net/news/',
+                buttontxt: 'Thrice Site',
+                modaltarget: '#thricetarget',
+                modalid: 'thricetarget',
+                albums: 'Thrice has released 9 albums'
             }, {
                 name: 'Mastodon',
-                albums: 7
+                location: 'Metal from Atlanta, Georgia',
+                id: 'mastodon',
+                url: 'http://www.mastodonrocks.com/',
+                buttontxt: 'Mastodon Site',
+                modaltarget: '#mastodontarget',
+                modalid: 'mastodontarget',
+                albums: 'Mastodon has released 7 albums'
             }
         ]
     }
