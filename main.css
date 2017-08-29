@@ -30,9 +30,9 @@ p {
 }
 
 #mastodon {
-        background-image: url('/pics/mastodon.jpeg');
-        background-repeat: no-repeat;
-        background-size: cover;
+    background-image: url('/pics/mastodon.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 button {
@@ -40,4 +40,19 @@ button {
     width: auto;
     background-color: black;
     color: white;
+    border-radius: 5px;
+}
+
+.btn {
+    margin-top: 10px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
 }
