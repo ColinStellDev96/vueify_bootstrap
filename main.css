@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+}
+
+h1, h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+p {
+    color: white;
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    height: 400px;
+}
+
+#underoath {
+    background-image: url('/pics/underoath.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#thrice {
+    background-image: url('/pics/thrice.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mastodon {
+        background-image: url('/pics/mastodon.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+button {
+    height: 40px;
+    width: auto;
+    background-color: black;
+    color: white;
+}
